@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Ham-Packet-DXSpider
-version:            0.01
+version:            0.02
 abstract:           Receives DX Spots from the DXCluster
 author:
     - Bruce James <custard@cpan.org>

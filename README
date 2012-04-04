@@ -1,4 +1,4 @@
-Ham-DXSpider
+Ham-Packet-DXSpider
 
 This is a small module designed to connect to a DXSpider server and 
 enable the storage and retrieval of messages from that server.
@@ -31,21 +31,21 @@ perldoc command.
 You can also look for information at:
 
     RT, CPAN's request tracker (report bugs here)
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Ham-DXSpider
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Ham-Packet-DXSpider
 
     AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/Ham-DXSpider
+        http://annocpan.org/dist/Ham-Packet-DXSpider
 
     CPAN Ratings
-        http://cpanratings.perl.org/d/Ham-DXSpider
+        http://cpanratings.perl.org/d/Ham-Packet-DXSpider
 
     Search CPAN
-        http://search.cpan.org/dist/Ham-DXSpider/
+        http://search.cpan.org/dist/Ham-Packet-DXSpider/
 
 
 LICENSE AND COPYRIGHT
 
-Copyright (C) 2011 Bruce James
+Copyright (C) 2012 Bruce James
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
