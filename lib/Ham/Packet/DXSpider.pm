@@ -10,7 +10,7 @@ package Ham::Packet::DXSpider;
 use strict;
 use warnings;
 
-our $VERSION="0.02";
+our $VERSION="0.03";
 
 =pod
 
@@ -72,6 +72,15 @@ Ham::Packet::DXSpider - Receives DX Spots from the DXCluster
 
 =head1 DESCRIPTION
 
+=head2 CONSTRUCTOR
+
+new( callsign => 'your callsign', address => 'dxcluster address', port => 'port', handle => IO::Handle );
+
+Create a new DXSpider object for the specified callsign. If address and optionally port are
+specified, this will also open the connection to the DXSPIDER server.
+
+Address can also be an already open IO::Handle object, in which case port becomes meaningless.
+
 =head2 METHODS
 
 =cut
@@ -96,14 +105,10 @@ has 'stats_handler'           => (is=>'rw', default => sub { [] } );
 
 has 'pending_messages'        => (is=>'rw', default => sub { [] } );
 
-=head2 constructor
 
-new( callsign => 'your callsign', address => 'dxcluster address', port => 'port', handle => IO::Handle );
+=head2 BUILD()
 
-Create a new DXSpider object for the specified callsign. If address and optionally port are
-specified, this will also open the connection to the DXSPIDER server.
-
-Address can also be an already open IO::Handle object, in which case port becomes meaningless.
+Moose builder. Called after construction. Opens the handle if necessary.
 
 =cut
 sub BUILD {
@@ -314,6 +319,26 @@ sub defaultPrivateMessageHandler {
 ## PRIVATES ##
 ##############
 
+=head1 Private Methods
+
+=over
+
+=item dispatchStats()
+
+=item dispatchDXMessage()
+
+=item dispatchPrivateMessage()
+
+=item _sendPrivate()
+
+=item processPending()
+
+=item process()
+
+=back
+
+=cut
+
 sub dispatchStats {
     # PRIVATE: Dispatches the message to all the handlers
     my $self=   shift;
@@ -504,7 +529,7 @@ Bruce James - custard@cpan.org
 
 =head1 VERSION
 
-0.02
+0.03
 
 =cut
 
