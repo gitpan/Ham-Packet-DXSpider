@@ -1,16 +1,19 @@
-#!/software/perl/5.8.0/bin/perl
+#!usr/bin/perl
 #
 # Class  : Ham::Packet::DXSpider
 # Purpose: Provides a remote interface to the DXSpider DX Cluster software. 
-# Author : $LastChangedBy: $
-# Version: $LastChangedRevision: $
-# Date   : $LastChangedDate: $
+# Author : Bruce James (custard@cpan.org)
+# Date   : 7th April 2012
 #
 package Ham::Packet::DXSpider;
 use strict;
 use warnings;
+use IO::Handle;
+use IO::Socket;
+use POSIX;
+use Moose;
 
-our $VERSION="0.03";
+our $VERSION="0.04";
 
 =pod
 
@@ -85,14 +88,6 @@ Address can also be an already open IO::Handle object, in which case port become
 
 =cut
 
-package Ham::Packet::DXSpider;
-
-use strict;
-use warnings;
-use IO::Handle;
-use IO::Socket;
-use POSIX;
-use Moose;
 
 has 'callsign' => (is=>'ro');
 has 'address'  => (is=>'ro');
@@ -210,7 +205,8 @@ sub start {
 
 Polls the DXSPIDER once for a new event. This will block until something is received and the
 current transaction is completed.
-TODOLProbably would be a candidate for a timeout when I get time.
+
+TODO: Probably would be a candidate for a timeout when I get time.
 
 =cut
 sub poll {
@@ -515,9 +511,21 @@ sub process {
 
 =head1 PREREQUISITES
 
-=head2 Perl: 5.8.0
+=over
 
-=head2 Moose
+=item IO::Handle
+
+=item IO::Socket
+
+=item IO::Socket::INET
+
+=item Moose
+
+=item POSIX
+
+=item Test::More
+
+=back
 
 =head1 OSNAMES
 
@@ -529,7 +537,16 @@ Bruce James - custard@cpan.org
 
 =head1 VERSION
 
-0.03
+0.04
+
+=head1 COPYRIGHT
+
+Copyright 2012, Bruce James
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
 

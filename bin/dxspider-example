@@ -1,7 +1,7 @@
 #!/usr/bin/perl 
 #
 # Module : dxspider
-# Purpose: Parse dxspider data, and also reads mail and forwards to an email mailbox
+# Purpose: Parse dxspider data
 # Author : B.James
 # Date   : 2012/04/03
 # Version: $Revision: 1.7 $
@@ -14,21 +14,15 @@ dxspider - Parse dxspider data, and also reads mail and forwards to an email mai
 
 =head1 SYNOPSIS
 
-dxspider [ -h ]
-
-=head2 Options:-
-
-=over
-=item -h    Help.
-
-=back
+dxspider
 
 =head1 DESCRIPTION
 
 This is an example of some of the functionality of Ham::Packet::DXSpider
+
 =head1 AUTHOR
 
-Bruce James (bruce@pomegranate.ltd.uk)
+Bruce James (custard@cpan.org)
 
 =cut
 
